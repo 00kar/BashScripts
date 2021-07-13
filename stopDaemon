@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "Enter what daemaon you want to stop"
+read name
+
+
+echo -e "\nChecking status of $name ...." 
+export x=$(systemctl status $name | sed -n '3p' | cut -d " " -f7)
+if [ $x == "active" ]
+then
+	echo "Stoping $name ...."
+	sudo systemctl stop $name
+	echo "$name is stoped !"
+else
+	echo "$name is already stopped !!!"
+fi
