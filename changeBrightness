@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "Please enter a brightness level in range 0 to 255 "
+cat >> /sys/class/backlight/amdgpu_bl0/brightness 
+
+#######
+
+#echo "Please enter a brightness level in range 0 to 1 "
+#read BRIGHTNESS_LEVEL
+#export MONITOR_NAME=$(xrandr | grep " connected" | cut -f1 -d " ")
+#xrandr --output $MONITOR_NAME --brightness $BRIGHTNESS_LEVEL
