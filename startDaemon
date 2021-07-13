@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "Enter what daemaon you want to start"
+read name
+
+
+echo -e "\nChecking status of $name ...." 
+export x=$(systemctl status $name | sed -n '3p' | cut -d " " -f7)
+if [ $x == "inactive" ]
+then
+	echo "Starting $name ...."
+	sudo systemctl start $name
+	echo "$name started !"
+else
+	echo "$name has already started !!!"
+fi
