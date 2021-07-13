@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "Enter what daemaon you want to disable"
+read name
+
+echo -e "\nChecking if $name is disabled ...." 
+export x=$(systemctl is-enabled $name)
+if [ $x == "enabled" ]
+then
+	echo "Disabling $name ...."
+	sudo systemctl disable $name
+	echo "$name is disabled !"
+else
+	echo "$name is already disabled !!!"
+fi
