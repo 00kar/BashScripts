@@ -5,5 +5,5 @@ cd /var/www/html
 sudo mv index.html _index.html
 sudo rm index.html
 cd ~/
-sudo wget rate.am
+sudo wget youtube.com
 sudo mv index.html /var/www/html
